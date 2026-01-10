@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from './layout/Layout'
 import { AITextModalProvider } from './contexts/AITextModalContext'
 import { TextModalProvider } from './contexts/TextModalContext'
+import OnboardingPage from '@/pages/onboarding/OnboardingPage'
 import MemoryListPage from './pages/MemoryListPage'
 
 const queryClient = new QueryClient({
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
 			{
 				path: '/',
 				element: <MainPage />,
+			},
+			{
+				path: '/onboarding',
+				element: <OnboardingPage />,
 			},
 			{
 				path: '/memory',
