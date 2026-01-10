@@ -58,7 +58,7 @@ export default function OnboardingPage() {
 			</div>
 
 			<section className='flex flex-col items-center justify-center px-2 relative z-20 py-20'>
-				<FilledButton label='슬픔 작성하기' onClick={() => navigate('/')} />
+				<FilledButton label='슬픔 작성하기' onClick={() => navigate('/write')} />
 			</section>
 		</div>
 	)
