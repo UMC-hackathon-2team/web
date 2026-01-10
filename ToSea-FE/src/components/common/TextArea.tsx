@@ -29,7 +29,6 @@ export default function TextArea({
 	onChange,
 	placeholder = '',
 	maxLength = 200,
-	width = 288,
 	height = 400,
 	disabled = false,
 	error = false,
@@ -45,7 +44,7 @@ export default function TextArea({
 	}
 
 	return (
-		<div className='flex flex-col gap-2 mx-auto' style={{ width }}>
+		<div className={cn('flex flex-col gap-2 mx-auto w-full px-8', className)}>
 			<div className='relative' style={{ height }}>
 				<textarea
 					value={value}

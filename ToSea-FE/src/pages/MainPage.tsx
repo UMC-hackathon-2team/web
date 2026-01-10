@@ -2,6 +2,7 @@ import { useState } from 'react'
 import TextArea from '../components/common/TextArea'
 import { useAITextModal } from '@/contexts/AITextModalContext'
 import { useTextModal } from '@/contexts/TextModalContext'
+import { FilledButton, OutlinedButton } from '@/components/common/button'
 
 const MainPage = () => {
 	const [text, setText] = useState('')
@@ -79,6 +80,13 @@ const MainPage = () => {
 				<br />
 				<br />
 				<TextArea value={text} onChange={setText} placeholder='Text Something' />
+				<br />
+				<FilledButton label='작성하기' onClick={() => {}} />
+				<br />
+				<br />
+				<OutlinedButton label='다른 슬픔 기록하기' onClick={() => {}} />
+				<br />
+				<br />
 			</div>
 		</div>
 	)
