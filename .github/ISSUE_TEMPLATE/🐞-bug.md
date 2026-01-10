@@ -1,7 +1,7 @@
 ---
 name: "\U0001F41E Bug"
 about: 버그 수정용 이슈 템플릿입니다.
-title: "[Bug]"
+title: "[BUG]"
 labels: ''
 assignees: ''
 

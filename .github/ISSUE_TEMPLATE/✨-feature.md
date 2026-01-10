@@ -1,7 +1,7 @@
 ---
 name: "✨ Feature"
 about: 새로운 기능 개발을 위한 이슈 템플릿입니다.
-title: "[feat]"
+title: "[FEAT]"
 labels: ''
 assignees: ''
 
