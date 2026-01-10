@@ -1,4 +1,3 @@
-import React from 'react'
 import { BaseButton, type BaseButtonProps } from './BaseButton'
 import { cn } from '../../../utils/cn'
 
