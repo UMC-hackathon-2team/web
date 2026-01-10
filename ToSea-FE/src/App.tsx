@@ -7,6 +7,7 @@ import { AITextModalProvider } from './contexts/AITextModalContext'
 import { TextModalProvider } from './contexts/TextModalContext'
 import OnboardingPage from '@/pages/onboarding/OnboardingPage'
 import MemoryListPage from './pages/MemoryListPage'
+import WritePage from '@/pages/write/WritePage'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
 			{
 				path: '/memory',
 				element: <MemoryListPage />,
+			},
+			{
+				path: '/write',
+				element: <WritePage />,
 			},
 		],
 	},
