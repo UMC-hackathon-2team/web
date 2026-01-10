@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import TextArea from '@/components/common/TextArea'
 import { FilledButton } from '@/components/common/button'
+import usePostMemory from '@/hooks/queries/usePostMemory'
 
 import WaveIcon from '@/assets/icons/onboarding/wave.svg' // 경로 맞춰줘
 import { useNavigate } from 'react-router-dom'
@@ -8,11 +9,25 @@ import { useNavigate } from 'react-router-dom'
 export default function WritePage() {
 	const [text, setText] = useState('')
 	const navigate = useNavigate()
+	const { mutate: createMemory } = usePostMemory()
 
 	const handleSubmit = () => {
 		if (!text.trim()) return
 		console.log('작성 내용:', text)
-		navigate('/motion')
+
+		createMemory(
+			{ content: text },
+			{
+				onSuccess: data => {
+					console.log('기억 작성 성공:', data)
+					// 응답 데이터를 state로 전달
+					navigate('/motion', { state: { memoryData: data } })
+				},
+				onError: error => {
+					console.error('기억 작성 실패:', error)
+				},
+			}
+		)
 	}
 
 	return (

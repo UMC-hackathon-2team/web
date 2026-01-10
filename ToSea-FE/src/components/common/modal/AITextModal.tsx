@@ -9,6 +9,8 @@ interface AITextModalProps {
 }
 
 const AITextModal = ({ title, text, isOpen = true, onClose }: AITextModalProps) => {
+	console.log('🎯 AITextModal props - title:', title, 'text:', text)
+
 	return (
 		<AnimatePresence>
 			{isOpen && (

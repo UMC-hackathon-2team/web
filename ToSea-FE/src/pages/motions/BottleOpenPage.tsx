@@ -1,9 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate, useLocation } from 'react-router-dom'
 // SVG 경로가 맞는지 확인해주세요
 import BottleWithLetterIcon from '@/assets/icons/common/bottles/BottleWithLetter.svg?react'
 import FilledButton from '@/components/common/button/FilledButton'
-import { useNavigate } from 'react-router-dom'
 
 interface SparkleProps {
 	top: string
@@ -51,9 +51,11 @@ const BottleOpenPage = () => {
 	]
 
 	const navigate = useNavigate()
+	const location = useLocation()
+	const memoryData = location.state?.memoryData
 
 	const handleOpenBottle = () => {
-		navigate('/ai-message')
+		navigate('/ai-message', { state: { memoryData } })
 	}
 
 	return (

@@ -2,18 +2,35 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import CloseIcon from '@/assets/icons/modal/Close.svg?react'
 import HeartIcon from '@/assets/icons/modal/Heart.svg?react'
+import usePostEmpathy from '@/hooks/queries/usePostEmpathy'
 
 interface TextModalProps {
+	memoryId: number
+	title?: string
 	text: string
 	isOpen?: boolean
 	onClose?: () => void
 }
 
-const TextModal = ({ text, isOpen = true, onClose }: TextModalProps) => {
+const TextModal = ({ memoryId, title, text, isOpen = true, onClose }: TextModalProps) => {
 	const [isLiked, setIsLiked] = useState(false)
+	const { mutate: toggleEmpathy } = usePostEmpathy()
 
 	const handleHeartClick = () => {
-		setIsLiked(!isLiked)
+		console.log('❤️ 공감 버튼 클릭, memoryId:', memoryId, '현재 상태:', isLiked)
+		const type = isLiked ? 'DECREMENT' : 'INCREMENT'
+		toggleEmpathy(
+			{ memoryId, type },
+			{
+				onSuccess: data => {
+					console.log('✅ 공감 API 성공:', data)
+					setIsLiked(!isLiked)
+				},
+				onError: error => {
+					console.error('❌ 공감 API 실패:', error)
+				},
+			}
+		)
 	}
 	return (
 		<AnimatePresence>
@@ -38,10 +55,13 @@ const TextModal = ({ text, isOpen = true, onClose }: TextModalProps) => {
 							exit={{ opacity: 0, scale: 0.95, y: 10 }}
 							transition={{ duration: 0.2, ease: 'easeOut' }}
 						>
-							{/* x 버튼*/}
+							{/* x 버튼 */}
 							<div className='flex justify-end'>
 								<CloseIcon className='cursor-pointer w-[13.5] h-[13.5] p-[5.4]' onClick={onClose} />
 							</div>
+
+							{/* 제목 */}
+							{title && <div className='font-bold text-lg mb-2'>{title}</div>}
 
 							{/* 콘텐츠 */}
 							<div className='body-1 w-60 h-70 text-start'>{text}</div>

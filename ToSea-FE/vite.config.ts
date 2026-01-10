@@ -12,4 +12,13 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
+	server: {
+		proxy: {
+			'/api': {
+				target: 'http://3.37.111.58:8080', // 백엔드 서버 주소
+				changeOrigin: true,
+				secure: false,
+			},
+		},
+	},
 })
