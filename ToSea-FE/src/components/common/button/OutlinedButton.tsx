@@ -1,4 +1,3 @@
-import React from 'react'
 import { BaseButton, type BaseButtonProps } from './BaseButton'
 import { cn } from '../../../utils/cn'
 
@@ -11,7 +10,7 @@ export default function OutlinedButton({ className, ...props }: Props) {
 			className={cn(
 				// Enable
 				'bg-white text-black',
-				'border border-main-400',
+				'border border-gray-3',
 				// Hover
 				'hover:bg-[#F3F3F3]',
 				// Pressed
