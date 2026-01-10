@@ -9,6 +9,7 @@
     <OutlinedButton label="다른 사람 메모 보기" onClick={goOthers} />
     <OutlinedButton label="다른 글 작성하기" onClick={reset}  /> className="border-transparent" />
  
+  
     <FilledButton label='작성하기' onClick={() => {}} />
     <OutlinedButton label='다른 슬픔 기록하기' onClick={() => {}} />
 */
