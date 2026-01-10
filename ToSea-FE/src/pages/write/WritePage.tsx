@@ -2,7 +2,7 @@ import { useState } from 'react'
 import TextArea from '@/components/common/TextArea'
 import { FilledButton } from '@/components/common/button'
 
-import WaveIcon from '@/assets/icons/onboarding/wave.svg' // 경로 맞춰줘
+import WaveIcon from '@/assets/icons/onboarding/wave.svg'
 
 export default function WritePage() {
 	const [text, setText] = useState('')
