@@ -1,7 +1,9 @@
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, type ReactNode } from 'react'
 import TextModal from '@/components/common/modal/TextModal'
 
 interface TextModalData {
+	memoryId: number
+	title?: string
 	text: string
 }
 
@@ -13,6 +15,7 @@ interface TextModalContextType {
 
 const TextModalContext = createContext<TextModalContextType | undefined>(undefined)
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTextModal = () => {
 	const context = useContext(TextModalContext)
 	if (!context) {
@@ -27,7 +30,7 @@ interface TextModalProviderProps {
 
 export const TextModalProvider = ({ children }: TextModalProviderProps) => {
 	const [isOpen, setIsOpen] = useState(false)
-	const [modalData, setModalData] = useState<TextModalData>({ text: '' })
+	const [modalData, setModalData] = useState<TextModalData>({ memoryId: 0, text: '' })
 
 	const openModal = (data: TextModalData) => {
 		setModalData(data)
@@ -41,7 +44,13 @@ export const TextModalProvider = ({ children }: TextModalProviderProps) => {
 	return (
 		<TextModalContext.Provider value={{ isOpen, openModal, closeModal }}>
 			{children}
-			<TextModal text={modalData.text} isOpen={isOpen} onClose={closeModal} />
+			<TextModal
+				memoryId={modalData.memoryId}
+				title={modalData.title}
+				text={modalData.text}
+				isOpen={isOpen}
+				onClose={closeModal}
+			/>
 		</TextModalContext.Provider>
 	)
 }

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, type ReactNode } from 'react'
 import AITextModal from '@/components/common/modal/AITextModal'
 
 interface AITextModalData {
@@ -14,6 +14,7 @@ interface AITextModalContextType {
 
 const AITextModalContext = createContext<AITextModalContextType | undefined>(undefined)
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAITextModal = () => {
 	const context = useContext(AITextModalContext)
 	if (!context) {

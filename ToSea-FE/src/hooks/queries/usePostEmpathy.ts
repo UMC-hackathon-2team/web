@@ -9,7 +9,7 @@ function usePostEmpathy() {
 		mutationFn: ({ memoryId, type }: { memoryId: number; type: 'INCREMENT' | 'DECREMENT' }) => {
 			return postEmpathy(memoryId, type)
 		},
-		onSuccess: (data, { memoryId }) => {
+		onSuccess: (_data, { memoryId }) => {
 			queryClient.invalidateQueries({ queryKey: [QUERY_KEY.memory, memoryId] })
 		},
 		onError: error => {

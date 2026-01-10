@@ -18,6 +18,7 @@ const MainPage = () => {
 
 	const handleOpenTextModal = () => {
 		openTextModal({
+			memoryId: 1, // 테스트용 memoryId
 			text: '일반 텍스트 모달입니다.',
 		})
 	}
