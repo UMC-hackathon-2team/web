@@ -81,16 +81,27 @@ button:disabled {
 	--color-gray-10: #1f1f1f;
 	
 
-	--color-blue-50: #eceef7;
-	--color-blue-100: #e3e5f3;
-	--color-blue-200: #c5c9e7;
-	--color-blue-300: #4452b1;
-	--color-blue-400: #3d4a9f;
-	--color-blue-500: #36428e;
-	--color-blue-600: #333e85;
-	--color-blue-700: #29316a;
-	--color-blue-800: #1f2550;
-	--color-blue-900: #181d3e;
+	--color-main-50: #eceef7;
+	--color-main-100: #e3e5f3;
+	--color-main-200: #c5c9e7;
+	--color-main-300: #4452b1;
+	--color-main-400: #3d4a9f;
+	--color-main-500: #36428e;
+	--color-main-600: #333e85;
+	--color-main-700: #29316a;
+	--color-main-800: #1f2550;
+	--color-main-900: #181d3e;
+
+  --color-secondary-50: #f2f8fd;
+  --color-secondary-100: #E4F2FF;
+  --color-secondary-200: #d7e8f9;
+  --color-secondary-300: #7eb5ec;
+  --color-secondary-400: #71a3d4;
+  --color-secondary-500: #6591bd;
+  --color-secondary-600: #5f88b1;
+  --color-secondary-700: #4c6d8e;
+  --color-secondary-800: #39516a;
+  --color-secondary-900: #2c3f53;
 	
 	--shadow-sm: 0 8px 24px 0 rgba(39, 39, 39, 0.15);
 	--shadow-md: 0 16px 40px 0 rgba(39, 39, 39, 0.2);
