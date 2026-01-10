@@ -53,7 +53,7 @@ const BottleOpenPage = () => {
 	const navigate = useNavigate()
 
 	const handleOpenBottle = () => {
-		navigate('/memory')
+		navigate('/ai-message')
 	}
 
 	return (
