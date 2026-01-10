@@ -3,6 +3,8 @@ import "./App.css";
 import MainPage from "./pages/MainPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./layout/Layout";
+import { AITextModalProvider } from "./contexts/AITextModalContext";
+import { TextModalProvider } from "./contexts/TextModalContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,7 +31,11 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <AITextModalProvider>
+          <TextModalProvider>
+            <RouterProvider router={router} />
+          </TextModalProvider>
+        </AITextModalProvider>
       </QueryClientProvider>
     </>
   );
