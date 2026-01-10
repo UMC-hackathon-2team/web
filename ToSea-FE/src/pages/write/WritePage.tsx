@@ -2,14 +2,17 @@ import { useState } from 'react'
 import TextArea from '@/components/common/TextArea'
 import { FilledButton } from '@/components/common/button'
 
-import WaveIcon from '@/assets/icons/onboarding/wave.svg'
+import WaveIcon from '@/assets/icons/onboarding/wave.svg' // 경로 맞춰줘
+import { useNavigate } from 'react-router-dom'
 
 export default function WritePage() {
 	const [text, setText] = useState('')
+	const navigate = useNavigate()
 
 	const handleSubmit = () => {
 		if (!text.trim()) return
 		console.log('작성 내용:', text)
+		navigate('/motion')
 	}
 
 	return (

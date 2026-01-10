@@ -24,8 +24,8 @@ export default function AiMessage() {
 			<div className='fixed inset-0 z-50 flex items-center justify-center pointer-events-none'>
 				<div className='w-full mt-110 pointer-events-auto'>
 					<div className='flex flex-col gap-3'>
-						<FilledButton label='다른 슬픔 보러가기' onClick={() => navigate('/')} />
-						<OutlinedButton label='관련된 슬픔 보러가기' onClick={() => navigate('/')} />
+						<FilledButton label='다른 슬픔 보러가기' onClick={() => navigate('/memory')} />
+						<OutlinedButton label='관련된 슬픔 보러가기' onClick={() => navigate('/memory')} />
 					</div>
 				</div>
 			</div>

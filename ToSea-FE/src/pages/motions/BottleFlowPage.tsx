@@ -3,12 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import type { Transition } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
-// SVG 파일 Import (Vite/SVGR 형식)
 import BottleIcon from '@/assets/icons/common/bottles/BottleWithLetter.svg?react'
 
-// --- 타입 정의 ---
-
-// 1. 잔물결 Props
+// 잔물결 Props
 interface RippleProps {
 	id: number
 	top: string
@@ -17,7 +14,7 @@ interface RippleProps {
 	onComplete: (id: number) => void
 }
 
-// 2. onUpdate에서 받을 애니메이션 값들의 타입 정의
+// onUpdate에서 받을 애니메이션 값들의 타입 정의
 interface AnimationValues {
 	top: string
 	left: string
