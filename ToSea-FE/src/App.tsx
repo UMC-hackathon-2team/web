@@ -1,44 +1,49 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import "./App.css";
-import MainPage from "./pages/MainPage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Layout } from "./layout/Layout";
-import { AITextModalProvider } from "./contexts/AITextModalContext";
-import { TextModalProvider } from "./contexts/TextModalContext";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import './App.css'
+import MainPage from './pages/MainPage'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Layout } from './layout/Layout'
+import { AITextModalProvider } from './contexts/AITextModalContext'
+import { TextModalProvider } from './contexts/TextModalContext'
+import MemoryListPage from './pages/MemoryListPage'
 
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 3,
-    },
-  },
-});
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false,
+			retry: 3,
+		},
+	},
+})
 
 const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <MainPage />,
-      },
-    ],
-  },
-]);
+	{
+		element: <Layout />,
+		children: [
+			{
+				path: '/',
+				element: <MainPage />,
+			},
+			{
+				path: '/memory',
+				element: <MemoryListPage />,
+			},
+		],
+	},
+])
 
 function App() {
-  return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <AITextModalProvider>
-          <TextModalProvider>
-            <RouterProvider router={router} />
-          </TextModalProvider>
-        </AITextModalProvider>
-      </QueryClientProvider>
-    </>
-  );
+	return (
+		<>
+			<QueryClientProvider client={queryClient}>
+				<AITextModalProvider>
+					<TextModalProvider>
+						<RouterProvider router={router} />
+					</TextModalProvider>
+				</AITextModalProvider>
+			</QueryClientProvider>
+		</>
+	)
 }
 
-export default App;
+export default App

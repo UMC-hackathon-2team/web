@@ -30,7 +30,7 @@ const TextModal = ({ text, isOpen = true, onClose }: TextModalProps) => {
 					/>
 
 					{/* 모달 컨테이너 */}
-					<div className='fixed inset-0 z-50 flex items-center justify-center pointer-events-none'>
+					<div className='fixed inset-0 z-100 flex items-center justify-center pointer-events-none'>
 						<motion.div
 							className='bg-white rounded-12 p-6 pointer-events-auto flex flex-col gap-3'
 							initial={{ opacity: 0, scale: 0.95, y: 10 }}
