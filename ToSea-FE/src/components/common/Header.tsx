@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import HomeIcon from '@/assets/icons/header/Home.svg?react'
 import FeedIcon from '@/assets/icons/header/Feed.svg?react'
 import LogoIcon from '@/assets/icons/Logo.svg?react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
 	const [isVisible, setIsVisible] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -35,9 +37,9 @@ const Header = () => {
 				isVisible ? 'translate-y-0' : '-translate-y-full'
 			}`}
 		>
-			<HomeIcon className='w-6 h-6 text-white' />
-			<LogoIcon className='w-25 h-10 text-white' />
-			<FeedIcon className='w-6 h-6 text-white' />
+			<HomeIcon className='w-6 h-6 text-white' onClick={() => navigate('/')} />
+			<LogoIcon className='w-25 h-10 text-white' onClick={() => navigate('/')} />
+			<FeedIcon className='w-6 h-6 text-white' onClick={() => navigate('/memory')} />
 		</div>
 	)
 }
