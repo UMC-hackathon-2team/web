@@ -1,13 +1,13 @@
-import { Outlet } from "react-router";
-import Header from "../components/Header";
+import { Outlet } from 'react-router'
+import Header from '../components/common/Header'
 
 export const Layout = () => {
-  return (
-    <>
-      <Header />
-      <div className="w-full max-w-main mx-auto">
-        <Outlet />
-      </div>
-    </>
-  );
-};
+	return (
+		<>
+			<Header />
+			<div className='w-full max-w-main mx-auto'>
+				<Outlet />
+			</div>
+		</>
+	)
+}
