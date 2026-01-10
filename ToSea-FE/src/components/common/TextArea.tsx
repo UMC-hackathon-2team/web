@@ -7,7 +7,7 @@
  * import TextArea from '../components/common/TextArea'
  *
  * const [text, setText] = useState('')
- * <TextArea value={text} onChange={setText} placeholder='Text Something' maxLength={100} />
+ * <TextArea value={text} onChange={setText} placeholder='Text Something' maxLength={200} />
  */
 import React from 'react'
 import { cn } from '../../utils/cn'
@@ -28,7 +28,7 @@ export default function TextArea({
 	value,
 	onChange,
 	placeholder = '',
-	maxLength = 100,
+	maxLength = 200,
 	width = 288,
 	height = 400,
 	disabled = false,
@@ -55,8 +55,8 @@ export default function TextArea({
 					maxLength={maxLength}
 					className={cn(
 						'resize-none outline-none',
-						'rounded-12 border px-4 pt-3 pb-10',
-						'text-body-2 w-full h-full',
+						'bg-white rounded-12 border px-4 pt-3 pb-10',
+						'text-body-2 w-full h-full text-black ',
 						'transition-all duration-200',
 						error ? 'border-red-500' : 'border-gray-3',
 						disabled && 'bg-gray-1 cursor-not-allowed opacity-60',
