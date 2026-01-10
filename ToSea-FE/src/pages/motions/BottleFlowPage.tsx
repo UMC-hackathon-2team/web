@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Transition } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import BottleIcon from '@/assets/icons/common/bottles/BottleWithLetter.svg?react'
 
@@ -73,6 +73,8 @@ const HorizontalRippleEffect: React.FC<RippleProps> = ({ id, top, left, scale, o
 // --- 메인 병 이동 컴포넌트 ---
 const BottleFlowPage: React.FC = () => {
 	const navigate = useNavigate()
+	const location = useLocation()
+	const memoryData = location.state?.memoryData
 
 	// 애니메이션 경로 데이터
 	const path = {
@@ -152,7 +154,7 @@ const BottleFlowPage: React.FC = () => {
 				onUpdate={latest => handleUpdate(latest as unknown as AnimationValues)}
 				onAnimationComplete={() => {
 					setTimeout(() => {
-						navigate('/bottle-open')
+						navigate('/bottle-open', { state: { memoryData } })
 					}, 1000)
 				}}
 			>
