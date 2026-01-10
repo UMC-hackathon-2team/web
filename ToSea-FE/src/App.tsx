@@ -9,6 +9,7 @@ import MemoryListPage from './pages/MemoryListPage'
 import BottleFlowPage from './pages/motions/BottleFlowPage'
 import BottleOpenPage from './pages/motions/BottleOpenPage'
 import WritePage from '@/pages/write/WritePage'
+import AiMessage from '@/pages/aiMessage/AiMessage'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
 			{
 				path: '/write',
 				element: <WritePage />,
+			},
+			{
+				path: '/ai-message',
+				element: <AiMessage />,
 			},
 		],
 	},
